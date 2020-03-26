@@ -1,0 +1,17 @@
+import praw
+
+reddit = praw.Reddit(client_id='fL629kJ062_WwA',
+                     client_secret='K6RBbQJdVymzBqOtLf1jNAOZXtc',
+                     username='codingcompanionBot',
+                     password='botforsubrcodingcompanion',
+                     user_agent='bot by /u/Tec945')
+                     
+subreddit = reddit.subreddit('codingcompanion')
+
+keyphrase = 'test'
+
+for comment in subreddit.stream.submissions():
+  if keyphrase in submission.body:
+    word = submission.body.replace(keyphrase, '')
+    try:
+      comment.reply("Test is functioning!")
